@@ -62,31 +62,59 @@ autocmd BufReadPost *
 
 
 " Mappings
-
-noremap   <up>    <nop>
-noremap   <down>  <nop>
-noremap   <left>  <nop>
-noremap   <right> <nop>
+"  Movement
+map   <up>    <nop>
+map   <down>  <nop>
+map   <left>  <nop>
+map   <right> <nop>
 
 "  Normal Mode
-
+"    Movement
 nnoremap  j       gj
 nnoremap  k       gk
+"    Move lines
+"      Move current line down by one
 nnoremap  <c-j>   ddp
+"      Move current line up by one
 nnoremap  <c-k>   ddkP
-
+"    Tab operations
+"      Create a new tab
+nnoremap  tn      :tabnew<cr>
+"      Split the current tab
+nnoremap  ts      :tab split<cr>
+"      Close the current tab
+nnoremap  tc      :tabclose<cr>
+"      Keep only the current tab
+nnoremap  to      :tabonly<cr>
+"      Move to next tab
+nnoremap  <c-l>   gt
+"      Move to previous tab
+nnoremap  <c-h>   gT
+"    Buffer operations
+"      Create a new vertical buffer
+nnoremap  <c-b>v  :vsplit<cr>
+"      Create a new horizontal buffer
+nnoremap  <c-b>h  :split<cr>
+"    Comments
 nmap      ;       gcc
 
 "  Visual Mode
-
+"    Buffer operations
+"      Yank and paste current selection into a new vertical buffer
+vnoremap  bvy     y:vnew<cr>p
+"      Yank and paste current selection into a new horizontal buffer
+vnoremap  by      y:new<cr>p
+"      Delete and paste current selection into a new vertical buffer
+vnoremap  bvd     d:vnew<cr>p
+"      Delete and paste current selection into a new horizontal buffer
+vnoremap  bd      d:new<cr>p
+"    Comments
 vmap      ;       gc
 
 "  Input Mode
-
-
-
 "  Terminal Mode
-
+"    General
 if has('nvim')
+"      Switch back to normal mode
   tnoremap  <esc>   <c-\><c-n>
 endif
