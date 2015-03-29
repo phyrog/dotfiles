@@ -80,6 +80,9 @@ source /etc/profile.d/vte.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export EDITOR=vim
+export VISUAL=vim
+
 ### SUTURO ###
 export EUROC_BASE=~/Development/ROS/suturo
 ### ------ ###
