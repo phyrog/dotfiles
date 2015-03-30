@@ -1,33 +1,33 @@
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
+	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
+	path = vim/vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
+	path = vim/vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
 [submodule "vim/bundle/gruvbox"]
-	path = vim/bundle/gruvbox
+	path = vim/vim/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
 [submodule "vim/bundle/lightline.vim"]
-	path = vim/bundle/lightline.vim
+	path = vim/vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule "vim/bundle/rainbow"]
-	path = vim/bundle/rainbow
+	path = vim/vim/bundle/rainbow
 	url = https://github.com/luochen1990/rainbow.git
 [submodule "vim/bundle/vim-commentary"]
-	path = vim/bundle/vim-commentary
+	path = vim/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
 [submodule "vim/bundle/vim-endwise"]
-	path = vim/bundle/vim-endwise
+	path = vim/vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
 [submodule "vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
+	path = vim/vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "vim/bundle/vim-pathogen"]
-	path = vim/bundle/vim-pathogen
+	path = vim/vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "gnome-shell-extensions/drop-down-terminal"]
-	path = gnome-shell-extensions/drop-down-terminal
+	path = gnome/gnome-shell-extensions/drop-down-terminal
 	url = https://github.com/zzrough/gs-extensions-drop-down-terminal.git

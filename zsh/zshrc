@@ -83,6 +83,10 @@ source /etc/profile.d/vte.sh
 export EDITOR=vim
 export VISUAL=vim
 
+fpath=(~/.zsh-completions $fpath)
+autoload -U compinit
+compinit
+
 ### SUTURO ###
 export EUROC_BASE=~/Development/ROS/suturo
 ### ------ ###
