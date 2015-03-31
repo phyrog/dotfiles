@@ -49,7 +49,7 @@ plugins=(ag archlinux git yaourt)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/tom/.local/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -91,4 +91,7 @@ compinit
 
 ### SUTURO ###
 export EUROC_BASE=~/Development/ROS/suturo
+export EUROC_DOCKER_RUN_OPTS="-p 27018:27017"
+
+alias dockuro=$EUROC_BASE/euroc_launch/docker/dockuro
 ### ------ ###
