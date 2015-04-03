@@ -31,3 +31,6 @@
 [submodule "gnome-shell-extensions/drop-down-terminal"]
 	path = gnome/gnome-shell-extensions/drop-down-terminal
 	url = https://github.com/zzrough/gs-extensions-drop-down-terminal.git
+[submodule "gnome/gnome-shell-extensions/gnome-shell-extensions-pidgin"]
+	path = gnome/gnome-shell-extensions/gnome-shell-extensions-pidgin
+	url = https://github.com/gutenye/gnome-shell-extensions-pidgin.git
