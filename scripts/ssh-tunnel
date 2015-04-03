@@ -1,0 +1,41 @@
+#!/bin/bash
+
+PROXY_SETTING="org.gnome.system.proxy"
+
+PROXY_MODE=`gsettings get $PROXY_SETTING mode`
+PROXY_SOCKS_HOST=`gsettings get $PROXY_SETTING.socks host`
+PROXY_SOCKS_PORT=`gsettings get $PROXY_SETTING.socks port`
+
+trap exit_clean INT
+
+function reset() {
+  >&2 echo "Resetting proxy settings..."
+  gsettings set $PROXY_SETTING mode $PROXY_MODE
+  gsettings set $PROXY_SETTING.socks host $PROXY_SOCKS_HOST
+  gsettings set $PROXY_SETTING.socks port $PROXY_SOCKS_PORT
+}
+
+function exit_clean() {
+  reset
+  exit 0
+}
+
+function exit_dirty() {
+  reset
+  exit 1
+}
+
+>&2 echo "Setting proxy settings..."
+gsettings set $PROXY_SETTING mode 'manual'
+gsettings set $PROXY_SETTING.socks host 'localhost'
+gsettings set $PROXY_SETTING.socks port '7070'
+
+>&2 echo "Connecting to Host..."
+>&2 echo "Cancel with ^C"
+ssh -N -D7070 $1 2> /dev/null
+
+if [ $? -ne 0 ]; then
+  >&2 echo "Connecting failed."
+  >&2 echo "Usage: $0 ssh-host"
+  exit_dirty
+fi
