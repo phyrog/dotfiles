@@ -45,7 +45,7 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ag archlinux git yaourt)
+plugins=(ag archlinux git yaourt rbenv)
 
 # User configuration
 
@@ -94,4 +94,5 @@ export EUROC_BASE=~/Development/ROS/suturo
 export EUROC_DOCKER_RUN_OPTS="-p 27018:27017"
 
 alias dockuro=$EUROC_BASE/euroc_launch/docker/dockuro
+alias suturo="cd $EUROC_BASE"
 ### ------ ###
