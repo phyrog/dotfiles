@@ -1,0 +1,23 @@
+#compdef dockuro
+_dockuro() {
+  local -a commands
+  commands=(
+    'launch:Launches a shell (and the container, if not running, default if no module build parameters are given)'
+    'init:Sets up docker and downloads all images'
+    'stop:Stops the container (will kill ALL of your container shells and running software inside)'
+    'update:Updates the container (will remove the container and pull new images from the registry)'
+    'build:Builds euroc-base and euroc-suturo-base images'
+    'push:Tags and pushes euroc-base and euroc-suturo-base (only for authorized users)'
+    'nocache:Prevents docker from using cached images'
+    'help:Prints a help message and exits'
+    'clean:Cleans the docker environment'
+  )
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_dockuro
