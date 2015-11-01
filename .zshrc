@@ -1,3 +1,7 @@
+if [[ "$TERM" == "xterm" ]]; then
+  export TERM=xterm-256color
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/tom/.oh-my-zsh
 
@@ -45,11 +49,11 @@ ZSH_THEME="nicoulaj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ag archlinux git yaourt rbenv)
+plugins=(ag archlinux git yaourt rbenv bundler)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.local/bin"
+export PATH="$HOME/.rbenv/shims:/usr/bin/core_perl:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -81,11 +85,12 @@ setopt auto_name_dirs
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 alias open=xdg-open
 alias vim=nvim
+alias vimdiff='nvim -d'
 
 function today() {
   date +"%Y-%m-%d"
@@ -99,46 +104,12 @@ function onoc-protocol() {
   vim $(boil onoc $(date +"%Y-%m-%d").md -b date $(date +"%d.%m.%Y"))
 }
 
+function docker-ip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' $@
+}
+
 ### Completions ###
 fpath=(~/.zsh-completions $fpath)
 autoload -U compinit
 compinit
 ### ----------- ###
-
-### SUTURO ###
-export EUROC_BASE=~/Development/ROS/suturo
-export EUROC_DOCKER_RUN_OPTS="-v /tmp/.X11-unix/X1:/tmp/.X11-unix/X1 -v $EUROC_BASE/bagfiles:/home/suturo/bagfiles -p 27018:27017"
-
-alias dockuro=$EUROC_BASE/euroc_launch/docker/dockuro
-alias suturo="cd $EUROC_BASE"
-### ------ ###
-
-### DFKI ###
-function _rock() {
-  if [ -z "$ROCKING" ]; then
-    export BEFORE_ROCKING=`pwd`
-    export ROCKING=true
-    export ROCK_HOME=$HOME/Development/rock
-    source  $ROCK_HOME/env.sh
-
-    alias rcb=rock-create-bundle
-    alias rcl=rock-create-lib
-    alias rco=rock-create-orogen
-    alias rcr=rock-create-rubylib
-    alias rcv=rock-create-vizkit-widget
-  fi
-  cd "$ROCK_HOME"
-}
-
-function _unrock() {
-  cd "$BEFORE_ROCKING"
-  unset BEFORE_ROCKING
-  unset ROCKING
-  unset ROCK_HOME
-  exec zsh
-}
-
-alias unrock=_unrock
-alias rock=_rock
-export GITHUB_ACCESS_TOKEN=7a717642c5d385641aa465dfaef8e8681f15dcdd
-### ---- ###
