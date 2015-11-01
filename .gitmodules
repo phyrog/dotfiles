@@ -1,3 +1,30 @@
+[submodule ".config/nvim/bundle/ctrlp.vim"]
+	path = .config/nvim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule ".config/nvim/bundle/delimitMate"]
+	path = .config/nvim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule ".config/nvim/bundle/gruvbox"]
+	path = .config/nvim/bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule ".config/nvim/bundle/lightline.vim"]
+	path = .config/nvim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".config/vim/bundle/vim-commentary"]
+	path = .config/nvim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule ".config/nvim/bundle/vim-endwise"]
+	path = .config/nvim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule ".config/nvim/bundle/vim-vinegar"]
+	path = .config/nvim/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
+[submodule ".config/nvim/bundle/vim-pathogen"]
+	path = .config/nvim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".config/nvim/bundle/vim-gitgutter"]
+	path = .config/nvim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
