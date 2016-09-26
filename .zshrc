@@ -10,6 +10,11 @@ export ZSH=/home/tom/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="nicoulaj"
+# zsh 5.2 has a bug with this theme. to fix it, delete the line
+# ```
+# local -a msgs
+# ```
+# in the file /usr/share/zsh/functions/VCS_Info/VCS_INFO_nvcsformats
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
