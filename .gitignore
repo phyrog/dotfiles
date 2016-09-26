@@ -1,0 +1,2 @@
+.config/nvim/plugs/*
+!.config/nvim/plugs/.gitkeep

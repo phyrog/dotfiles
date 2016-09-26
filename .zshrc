@@ -53,7 +53,7 @@ plugins=(ag archlinux git yaourt rbenv bundler)
 
 # User configuration
 
-export PATH="$HOME/.rbenv/shims:/usr/bin/core_perl:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.local/bin"
+export PATH="$HOME/.rbenv/shims:$HOME/.cabal/bin:/usr/bin/core_perl:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -91,6 +91,14 @@ export VISUAL=nvim
 alias open=xdg-open
 alias vim=nvim
 alias vimdiff='nvim -d'
+alias sbcl='with-readline sbcl'
+alias temp='cd $(mktemp -d)'
+
+function play() {
+  if [ -n "$1" ]; then arg="$1-"; fi
+  cd $(mktemp -d -p $HOME/Development/playground "${arg}XXXXXX")
+  pwd
+}
 
 function today() {
   date +"%Y-%m-%d"
@@ -113,3 +121,18 @@ fpath=(~/.zsh-completions $fpath)
 autoload -U compinit
 compinit
 ### ----------- ###
+
+function start_ontohub() {
+  _ systemctl start redis elasticsearch postgresql
+}
+
+function stop_ontohub() {
+  _ systemctl stop redis elasticsearch postgresql
+}
+
+NPM_PACKAGES="${HOME}/.npm-packages"
+PATH="$PATH:$NPM_PACKAGES/bin"
+# PATH="$NPM_PACKAGES/bin:$PATH"
+# export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
