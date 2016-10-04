@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'kovisoft/paredit'
 Plug 'Raimondi/delimitMate'
+Plug 'yalesov/vim-emblem'
 
 call plug#end()
 
@@ -58,6 +59,7 @@ set iskeyword-=_
 let mapleader=" "
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_markdown_enabled_makers = ['markdownlint']
 
 " Input
 
