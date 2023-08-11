@@ -1,0 +1,17 @@
+zsh-users/zsh-completions path:zsh-completions.plugin.zsh
+zsh-users/zsh-autosuggestions path:zsh-autosuggestions.plugin.zsh
+
+ohmyzsh/ohmyzsh path:lib/directories.zsh
+ohmyzsh/ohmyzsh path:lib/history.zsh
+ohmyzsh/ohmyzsh path:lib/key-bindings.zsh
+ohmyzsh/ohmyzsh path:lib/spectrum.zsh
+ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
+
+ohmyzsh/ohmyzsh path:plugins/git/git.plugin.zsh
+ohmyzsh/ohmyzsh path:plugins/git-lfs/git-lfs.plugin.zsh
+ohmyzsh/ohmyzsh path:plugins/github/github.plugin.zsh
+ohmyzsh/ohmyzsh path:plugins/tig/tig.plugin.zsh
+ohmyzsh/ohmyzsh path:plugins/helm/helm.plugin.zsh
+ohmyzsh/ohmyzsh path:plugins/kubectl/kubectl.plugin.zsh
+
+https://gist.github.com/phyrog/947024b2230c6db822a8d250b4f1cffc path:nicoulaj.zsh-theme
