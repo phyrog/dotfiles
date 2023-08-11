@@ -1,10 +1,11 @@
 export LC_ALL=en_US.UTF-8
 
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
+{{ if eq .chezmoi.os "darwin" }}
 export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/opt/llvm/bin"
-export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin"
-
 export ZSH_CACHE_DIR=$HOME/Library/Caches/zsh
+{{ end }}
+export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin"
 
 export EDITOR=nvim
 alias vim=nvim
