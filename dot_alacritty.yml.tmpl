@@ -1,0 +1,92 @@
+env:
+  TERM: xterm-256color
+
+window:
+  #decorations: None
+  #startup_mode: SimpleFullscreen
+  startup_mode: Fullscreen
+
+  padding:
+    x: 8
+    y: 4
+
+shell:
+  {{ if eq .chezmoi.os "darwin" -}}
+  program: /opt/homebrew/bin/zellij
+  {{ end -}}
+  args:
+    - options
+    - --default-shell
+    - zsh
+#    - -u # force UTF-8 in tmux
+
+font:
+  size: 16.0
+
+  normal:
+    family: "JetBrains Mono"
+
+  bold:
+    style: Regular
+
+  offset:
+    y: 1
+
+colors:
+  bright:
+    black:   &bright_black '#928374'
+    red:     &bright_red '#d16969'
+    green:   &bright_green '#b5cea8'
+    yellow:  &bright_yellow '#dcdcaa'
+    blue:    &bright_blue '#73b7f3'
+    magenta: &bright_magenta '#c586c0'
+    cyan:    &bright_cyan '#a4e6d6'
+    white:   &bright_white '#ffffff'
+  normal:
+    black:   &normal_black '#0e0e0e'
+    red:     &normal_red '#f44747'
+    green:   &normal_green '#608a4e'
+    yellow:  &normal_yellow '#d7bb7d'
+    blue:    &normal_blue '#569cd6'
+    magenta: &normal_magenta '#646695'
+    cyan:    &normal_cyan '#4ec9b0'
+    white:   &normal_white '#d4d4d4'
+  dim:
+    black:   &dim_black '#000000'
+    red:     &dim_red '#a50028'
+    green:   &dim_green '#1e6200'
+    yellow:  &dim_yellow '#ab8a2f'
+    blue:    &dim_blue '#005294'
+    magenta: &dim_magenta '#562d83'
+    cyan:    &dim_cyan '#007e63'
+    white:   &dim_white '#ababab'
+  primary:
+    background:        *normal_black
+    foreground:        *normal_white
+    bright_foreground: *bright_white
+    dim_foreground:    *dim_white
+  cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  selection:
+    text:       CellBackground
+    background: CellForeground
+
+key_bindings:
+  - { key: N,         mods: Command,      action: SpawnNewInstance       }
+  - { key: Space,     mods: Alt,          chars: " "                     }
+  - { key: Back, mods: Super, chars: "\x15" } # delete word/line
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                       } # one word left
+  - { key: Right,    mods: Alt,     chars: "\x1bf"                       } # one word right
+  - { key: Left,     mods: Command, chars: "\x1bOH",   mode: AppCursor   } # Home
+  - { key: Right,    mods: Command, chars: "\x1bOF",   mode: AppCursor   } # End
+  - { key: 28,      mods: Alt, chars: "{" }
+  - { key: 25,      mods: Alt, chars: "}" }
+  - { key: 37,      mods: Alt, chars: "@" }
+  - { key: 26,      mods: Alt|Shift, chars: "\\" }
+  - { key: 26,      mods: Alt, chars: "|" }
+  - { key: 23,      mods: Alt, chars: "[" }
+  - { key: 22,      mods: Alt, chars: "]" }
