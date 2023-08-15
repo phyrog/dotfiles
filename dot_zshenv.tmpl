@@ -1,0 +1,18 @@
+export LC_ALL=en_US.UTF-8
+export EDITOR=nvim
+
+export GOPATH="$HOME/Projects/.go"
+export WASMTIME_HOME="$HOME/.wasmtime"
+export CLOUDSDK_HOME="$HOME/.local/lib/google-cloud-sdk"
+
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
+
+{{ if eq .chezmoi.os "darwin" }}
+export ZSH_CACHE_DIR=$HOME/Library/Caches/zsh
+export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/opt/llvm/bin"
+export PATH="$PATH:$HOME/Library/Python/3.8/bin"
+{{ end }}
+
+export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin:$WASMTIME_HOME/bin"
+
+. "$HOME/.cargo/env"

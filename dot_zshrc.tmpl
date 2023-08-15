@@ -1,14 +1,22 @@
-export LC_ALL=en_US.UTF-8
+###############################################################################################################
+# Start Zellij ################################################################################################
+###############################################################################################################
 
-export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
-{{ if eq .chezmoi.os "darwin" }}
-export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/opt/llvm/bin"
-export ZSH_CACHE_DIR=$HOME/Library/Caches/zsh
-{{ end }}
-export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin"
+if [[ -z "$ZELLIJ" ]]; then
+    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+        exec zellij attach -c
+    else
+        exec zellij
+    fi
 
-export EDITOR=nvim
-alias vim=nvim
+    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+        exit
+    fi
+fi
+
+###############################################################################################################
+# General Settings ############################################################################################
+###############################################################################################################
 
 # Enable comments outside of scripts
 setopt interactivecomments
@@ -16,7 +24,9 @@ setopt interactivecomments
 # Enable completions
 autoload -Uz compinit && compinit
 
-compdef vim=nvim
+# FZF options
+export FZF_DEFAULT_COMMAND="fd"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 ###############################################################################################################
 # Antidote Config #############################################################################################
@@ -40,6 +50,39 @@ fi
 # Source your static plugins file.
 source $zsh_plugins
 
+###############################################################################################################
+# Aliases #####################################################################################################
+###############################################################################################################
+
+alias _=sudo
+alias gd="GIT_EXTERNAL_DIFF=difft git diff"
+alias gdc="GIT_EXTERNAL_DIFF=difft gd --cached"
+alias gs="git switch"
+alias gsc="git switch -c"
+alias kx=kubectx
+alias ns="netstat -p tcp -van | grep '^Proto\|LISTEN'"
+alias pr="gh pr view --web"
+alias brendle="(cd $HOME/.config && vim Brewfile && brew bundle --cleanup)"
+
+### Drop-in replacements
+
+alias vim=nvim
+compdef vim=nvim
+alias cat=bat
+alias top=htop
+compdef top=htop
+
+### Noglobs
+
+alias fd="noglob fd"
+
+alias find="noglob find"
+alias rg="noglob rg"
+alias curl="noglob curl"
+alias wget="noglob wget"
+alias zr="zellij run --"
+alias ze="zellij edit"
+compdef ze="nvim"
 
 ###############################################################################################################
 # Colors Config ###############################################################################################
@@ -48,10 +91,11 @@ source $zsh_plugins
 export LS_COLORS="di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
+###############################################################################################################
+# Completions #################################################################################################
+###############################################################################################################
 
-###############################################################################################################
-# Completion Config ###########################################################################################
-###############################################################################################################
+export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
 
 # Case-insensitive (all), partial-word, and then substring completion.
 if zstyle -t ':prezto:module:completion:*' case-sensitive; then
@@ -63,3 +107,4 @@ else
 fi
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select
+

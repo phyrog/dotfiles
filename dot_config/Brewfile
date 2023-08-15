@@ -8,7 +8,6 @@ cask "font-jetbrains-mono"
 # General tools
 cask "alacritty"
 brew "bat"
-brew "broot"
 brew "chezmoi"
 brew "difftastic"
 brew "diffutils"

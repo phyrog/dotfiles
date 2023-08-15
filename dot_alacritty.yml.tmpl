@@ -12,13 +12,10 @@ window:
 
 shell:
   {{ if eq .chezmoi.os "darwin" -}}
-  program: /opt/homebrew/bin/zellij
+  program: /bin/zsh
   {{ end -}}
   args:
-    - options
-    - --default-shell
-    - zsh
-#    - -u # force UTF-8 in tmux
+    - -l
 
 font:
   size: 16.0
