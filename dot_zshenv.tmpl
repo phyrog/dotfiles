@@ -15,4 +15,4 @@ export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 
 export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin:$WASMTIME_HOME/bin"
 
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
