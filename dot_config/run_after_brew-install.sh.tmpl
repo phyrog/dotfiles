@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+{{ if eq .chezmoi.os "darwin" -}}
+brew bundle --cleanup
+{{ end -}}

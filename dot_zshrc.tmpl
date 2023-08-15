@@ -62,7 +62,7 @@ alias gsc="git switch -c"
 alias kx=kubectx
 alias ns="netstat -p tcp -van | grep '^Proto\|LISTEN'"
 alias pr="gh pr view --web"
-alias brendle="(cd $HOME/.config && vim Brewfile && brew bundle --cleanup)"
+alias brendle="(cd $HOME/.config && chezmoi edit Brewfile && chezmoi apply Brewfile && brew bundle --cleanup)"
 
 ### Drop-in replacements
 
