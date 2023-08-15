@@ -10,6 +10,9 @@ export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin"
 export EDITOR=nvim
 alias vim=nvim
 
+# Enable comments outside of scripts
+setopt interactivecomments
+
 # Enable completions
 autoload -Uz compinit && compinit
 
@@ -44,5 +47,19 @@ source $zsh_plugins
 
 export LS_COLORS="di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+
+###############################################################################################################
+# Completion Config ###########################################################################################
+###############################################################################################################
+
+# Case-insensitive (all), partial-word, and then substring completion.
+if zstyle -t ':prezto:module:completion:*' case-sensitive; then
+  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+  setopt CASE_GLOB
+else
+  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+  unsetopt CASE_GLOB
+fi
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select
