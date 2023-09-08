@@ -106,7 +106,6 @@ brew "pulumi/tap/tf2pulumi"
 brew "flyctl"
 tap "localstack/tap"
 brew "localstack/tap/localstack-cli"
-brew "envoy"
 
 # Other
 cask "chromedriver"
