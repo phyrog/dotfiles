@@ -22,6 +22,7 @@ fi
 setopt interactivecomments
 
 # Enable completions
+fpath+=($ZSH_CACHE_DIR/completions)
 autoload -Uz compinit && compinit
 
 # FZF options
@@ -67,10 +68,8 @@ alias brendle="(cd $HOME/.config && chezmoi edit Brewfile && chezmoi apply Brewf
 ### Drop-in replacements
 
 alias vim=nvim
-compdef vim=nvim
 alias cat=bat
 alias top=htop
-compdef top=htop
 
 ### Noglobs
 
@@ -82,7 +81,6 @@ alias curl="noglob curl"
 alias wget="noglob wget"
 alias zr="zellij run --"
 alias ze="zellij edit"
-compdef ze="nvim"
 
 ###############################################################################################################
 # Colors Config ###############################################################################################
@@ -94,6 +92,10 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 ###############################################################################################################
 # Completions #################################################################################################
 ###############################################################################################################
+
+compdef vim=nvim
+compdef top=htop
+compdef ze="nvim"
 
 export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
 

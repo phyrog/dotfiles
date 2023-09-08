@@ -29,3 +29,6 @@ ohmyzsh/ohmyzsh path:plugins/helm/helm.plugin.zsh
 # cloud
 ohmyzsh/ohmyzsh path:plugins/aws/aws.plugin.zsh
 ohmyzsh/ohmyzsh path:plugins/gcloud/gcloud.plugin.zsh
+
+# custom
+phyrog/dotfiles path:plugins
