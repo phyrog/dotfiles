@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Brewfile sha256: {{ include "dot_config/Brewfile" | sha256sum }}
+brew bundle --cleanup -f- < {{ joinPath .chezmoi.sourceDir "dot_config/Brewfile" | quote }}
