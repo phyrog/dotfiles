@@ -1,0 +1,6 @@
+- package: alacritty
+
+- link:
+    ~/.alacritty.toml:
+      source: alacritty/alacritty.{{ OS }}.toml
+      force: true

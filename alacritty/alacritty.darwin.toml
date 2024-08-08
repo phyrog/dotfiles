@@ -1,0 +1,144 @@
+[colors.bright]
+black = "0x1C1B1A"
+blue = "0x4385BE"
+cyan = "0x3AA99F"
+green = "0x879A39"
+magenta = "0xCE5D97"
+red = "0xD14D41"
+white = "0xFFFCF0"
+yellow = "0xD0A215"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[colors.dim]
+black = "0x100F0F"
+blue = "0x205EA6"
+cyan = "0x24837B"
+green = "0x66800B"
+magenta = "0xA02F6F"
+red = "0xAF3029"
+white = "0xFFFCF0"
+yellow = "0xAD8301"
+
+[colors.normal]
+black = "0x100F0F"
+blue = "0x205EA6"
+cyan = "0x24837B"
+green = "0x66800B"
+magenta = "0xA02F6F"
+red = "0xAF3029"
+white = "0xFFFCF0"
+yellow = "0xAD8301"
+
+[colors.primary]
+background = "0x100F0F"
+bright_foreground = "0x878580"
+dim_foreground = "0x575653"
+foreground = "0xCECDC3"
+
+[colors.selection]
+background = "CellForeground"
+text = "CellBackground"
+
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 16.0
+
+[font.bold]
+style = "Regular"
+
+[font.normal]
+family = "JetBrains Mono"
+
+[font.offset]
+y = 1
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = " "
+key = "Space"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Left"
+mode = "AppCursor"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "Right"
+mode = "AppCursor"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "{"
+key = 28
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "}"
+key = 25
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "@"
+key = 37
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = '\'
+key = 26
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+chars = "|"
+key = 26
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "["
+key = 23
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "]"
+key = 22
+mods = "Alt"
+
+[shell]
+args = ["-l"]
+program = "/bin/zsh"
+[window]
+startup_mode = "Fullscreen"
+
+[window.padding]
+x = 8
+y = 4

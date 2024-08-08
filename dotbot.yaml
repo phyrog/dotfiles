@@ -3,8 +3,10 @@ config:
 
 profiles:
   common: &common
-    - zsh
+    - alacritty
     - zed
+    - zellij
+    - zsh
   macos:
     - *common
     -

@@ -1,13 +1,12 @@
-- package:
-    - apt: zsh
+- package: zsh
 
 - link:
     ~/.zshenv:
       source: zsh/zshenv
       force: true
-      ~/.zshrc:
-        source: zsh/zshrc
-        force: true
-      ~/.zsh_plugins.txt:
-        source: zsh/zsh_plugins.txt
-        force: true
+    ~/.zshrc:
+      source: zsh/zshrc
+      force: true
+    ~/.zsh_plugins.txt:
+      source: zsh/zsh_plugins.txt
+      force: true
