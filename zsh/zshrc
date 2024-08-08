@@ -1,0 +1,112 @@
+###############################################################################################################
+# Start Zellij ################################################################################################
+###############################################################################################################
+
+if [[ ! -z "$ALACRITTY_WINDOW_ID" && -z "$ZELLIJ" ]]; then
+    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+        exec zellij attach -c
+    else
+        exec zellij
+    fi
+
+    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+        exit
+    fi
+fi
+
+###############################################################################################################
+# General Settings ############################################################################################
+###############################################################################################################
+
+# Enable comments outside of scripts
+setopt interactivecomments
+
+# Enable completions
+fpath+=($ZSH_CACHE_DIR/completions)
+autoload -Uz compinit && compinit
+
+# FZF options
+export FZF_DEFAULT_COMMAND="fd"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+###############################################################################################################
+# Antidote Config #############################################################################################
+###############################################################################################################
+
+# Set the name of the static .zsh plugins file antidote will generate.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
+
+# Ensure you have a .zsh_plugins.txt file where you can add plugins.
+[[ -f ${zsh_plugins:r}.txt ]] || touch ${zsh_plugins:r}.txt
+
+# Lazy-load antidote.
+fpath+=(${ZDOTDIR:-~}/.antidote)
+autoload -Uz $fpath[-1]/antidote
+
+# Generate static file in a subshell when .zsh_plugins.txt is updated.
+if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
+  (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
+fi
+
+# Source your static plugins file.
+source $zsh_plugins
+
+###############################################################################################################
+# Aliases #####################################################################################################
+###############################################################################################################
+
+alias _=sudo
+alias gd="GIT_EXTERNAL_DIFF=difft git diff"
+alias gdc="GIT_EXTERNAL_DIFF=difft gd --cached"
+alias gs="git switch"
+alias gsc="git switch -c"
+alias kx=kubectx
+alias ns="netstat -p tcp -van | grep '^Proto\|LISTEN'"
+alias pr="gh pr view --web"
+alias brendle="(cd $HOME && chezmoi edit .Brewfile && chezmoi apply)"
+alias tf=terraform
+
+### Drop-in replacements
+
+alias vim=nvim
+alias cat=bat
+alias top=htop
+
+### Noglobs
+
+alias fd="noglob fd"
+
+alias find="noglob find"
+alias rg="noglob rg"
+alias curl="noglob curl"
+alias wget="noglob wget"
+alias zr="zellij run --"
+alias ze="zellij edit"
+
+###############################################################################################################
+# Colors Config ###############################################################################################
+###############################################################################################################
+
+export LS_COLORS="di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43"
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+###############################################################################################################
+# Completions #################################################################################################
+###############################################################################################################
+
+compdef vim=nvim
+compdef top=htop
+compdef ze="nvim"
+
+export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
+
+# Case-insensitive (all), partial-word, and then substring completion.
+if zstyle -t ':prezto:module:completion:*' case-sensitive; then
+  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+  setopt CASE_GLOB
+else
+  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+  unsetopt CASE_GLOB
+fi
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu select

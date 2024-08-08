@@ -3,6 +3,7 @@ config:
 
 profiles:
   common: &common
+    - zsh
     - zed
   macos:
     - *common

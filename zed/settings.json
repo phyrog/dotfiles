@@ -7,13 +7,13 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
-  "ui_font_size": 16,
+  "ui_font_size": 22,
   "vim_mode": true,
   "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 16,
+  "buffer_font_size": 22,
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "Flexoki Light",
     "dark": "Flexoki Dark"
   }
 }

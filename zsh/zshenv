@@ -1,0 +1,20 @@
+export LC_ALL=en_US.UTF-8
+export EDITOR=nvim
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#878580"
+
+export GOPATH="$HOME/Projects/.go"
+export WASMTIME_HOME="$HOME/.wasmtime"
+export CLOUDSDK_HOME="$HOME/.local/lib/google-cloud-sdk"
+export WHALEBREW_INSTALL_PATH="$HOME/.local/bin"
+
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
+
+
+export ZSH_CACHE_DIR=$HOME/Library/Caches/zsh
+export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/opt/llvm/bin"
+export PATH="$PATH:$HOME/Library/Python/3.8/bin"
+
+
+export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin:$WASMTIME_HOME/bin:$HOME/.bun/bin"
+
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
