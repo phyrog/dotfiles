@@ -1,0 +1,20 @@
+config:
+  - group: !include_dir_named "dotbot"
+
+profiles:
+  common: &common
+    - zed
+  macos:
+    - *common
+    -
+  linux: &linux
+    - *common
+    -
+  ubuntu:
+    - *linux
+    -
+
+default_profile:
+  - macos: '{{ eq OS "darwin" }}'
+  - ubuntu: '{{ MatchDistro "ubuntu" }}'
+  - common
