@@ -1,6 +1,0 @@
-- package: zed
-
-- link:
-    ~/.config/zed/settings.json:
-      source: zed/settings.json
-      force: true

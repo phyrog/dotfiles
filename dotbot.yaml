@@ -3,13 +3,11 @@ config:
 
 profiles:
   common: &common
-    - alacritty
-    - neovim
-    - zed
-    - zellij
-    - zsh
+    - devtools
+    - fonts
   macos:
     - *common
+    - containertools
     - arc
   linux: &linux
     - *common
@@ -21,4 +19,4 @@ profiles:
 default_profile:
   - macos: '{{ eq OS "darwin" }}'
   - ubuntu: '{{ MatchDistro "ubuntu" }}'
-  - common
+  - linux

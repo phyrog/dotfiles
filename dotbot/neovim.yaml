@@ -1,6 +1,0 @@
-- package: neovim
-
-- link:
-    ~/.config/nvim/init.lua:
-      source: neovim/init.lua
-      force: true

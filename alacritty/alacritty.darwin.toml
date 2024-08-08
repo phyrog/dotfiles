@@ -1,42 +1,42 @@
 [colors.bright]
-black = "0x1C1B1A"
-blue = "0x4385BE"
-cyan = "0x3AA99F"
-green = "0x879A39"
-magenta = "0xCE5D97"
-red = "0xD14D41"
-white = "0xFFFCF0"
-yellow = "0xD0A215"
+black = '#575653'
+red = '#D14D41'
+green = '#879A39'
+yellow = '#D0A215'
+blue = '#4385BE'
+magenta = '#CE5D97'
+cyan = '#3AA99F'
+white = '#FFFCF0'
 
 [colors.cursor]
-cursor = "CellForeground"
-text = "CellBackground"
+text = 'CellBackground'
+cursor = 'CellForeground'
 
 [colors.dim]
-black = "0x100F0F"
-blue = "0x205EA6"
-cyan = "0x24837B"
-green = "0x66800B"
-magenta = "0xA02F6F"
-red = "0xAF3029"
-white = "0xFFFCF0"
-yellow = "0xAD8301"
+black = '#575653'
+red = '#AF3029'
+green = '#66800B'
+yellow = '#AD8301'
+blue = '#205EA6'
+magenta = '#A02F6F'
+cyan = '#24837B'
+white = '#FFFCF0'
 
 [colors.normal]
-black = "0x100F0F"
-blue = "0x205EA6"
-cyan = "0x24837B"
-green = "0x66800B"
-magenta = "0xA02F6F"
-red = "0xAF3029"
-white = "0xFFFCF0"
-yellow = "0xAD8301"
+black = '#575653'
+red = '#AF3029'
+green = '#66800B'
+yellow = '#AD8301'
+blue = '#205EA6'    # rgb(32, 94, 166)
+magenta = '#A02F6F'
+cyan = '#24837B'
+white = '#FFFCF0'
 
 [colors.primary]
-background = "0x100F0F"
-bright_foreground = "0x878580"
-dim_foreground = "0x575653"
-foreground = "0xCECDC3"
+background = '#100F0F'
+foreground = '#FFFCF0'
+dim_foreground = '#FFFCF0'
+bright_foreground = '#FFFCF0'
 
 [colors.selection]
 background = "CellForeground"

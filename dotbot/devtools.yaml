@@ -1,0 +1,49 @@
+- package:
+    - alacritty
+    - bat
+    - difftastic
+    - fd
+    - fzf
+    - gh
+    - git
+    - git-lfs
+    - gron
+    - htop
+    - jq
+    - neovim
+    - ripgrep
+    - tig
+    - zed
+    - zellij
+    - zsh
+
+- link:
+    ~/.alacritty.toml:
+      source: alacritty/alacritty.{{ OS }}.toml
+      force: true
+
+- link:
+    ~/.config/nvim/init.lua:
+      source: neovim/init.lua
+      force: true
+
+- link:
+    ~/.config/zed/settings.json:
+      source: zed/settings.json
+      force: true
+
+- link:
+    ~/.config/zellij/layouts/default.kdl:
+      source: zellij/layouts/default.kdl
+      force: true
+
+- link:
+    ~/.zshenv:
+      source: zsh/zshenv
+      force: true
+    ~/.zshrc:
+      source: zsh/zshrc
+      force: true
+    ~/.zsh_plugins.txt:
+      source: zsh/zsh_plugins.txt
+      force: true

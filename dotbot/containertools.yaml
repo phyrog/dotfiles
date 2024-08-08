@@ -1,0 +1,1 @@
+- package: [docker, docker-buildx, k3d, k9s, kubernetes-cli, helm, kubectx]
