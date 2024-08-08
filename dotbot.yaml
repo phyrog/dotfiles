@@ -4,12 +4,13 @@ config:
 profiles:
   common: &common
     - alacritty
+    - neovim
     - zed
     - zellij
     - zsh
   macos:
     - *common
-    -
+    - arc
   linux: &linux
     - *common
     -
