@@ -3,11 +3,15 @@ config:
 
 profiles:
   common: &common
-    - devtools
+    - term
     - fonts
+    - gotools
+    - rusttools
+    - logseq
   macos:
     - *common
     - containertools
+    - cloudtools
     - arc
   linux: &linux
     - *common

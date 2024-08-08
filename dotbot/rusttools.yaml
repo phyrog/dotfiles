@@ -1,0 +1,6 @@
+- package:
+    - rustup
+
+- shell:
+    command: rustup default stable
+    desc: Installing default stable toolchain

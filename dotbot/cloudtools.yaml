@@ -1,0 +1,12 @@
+- package:
+    - awscli
+    - aws-nuke
+    - session-manager-plugin
+    - azure-cli
+    - google-cloud-sdk
+    - terraform
+    - hashicorp/tap/packer
+    - pulumi/tap/pulumi
+    - pulumi/tap/pulumictl
+    - pulumi/tap/tf2pulumi
+    - flyctl
