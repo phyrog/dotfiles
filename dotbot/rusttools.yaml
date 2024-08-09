@@ -1,6 +1,8 @@
 - package:
     - rustup
 
+- create: ~/Projects
+
 - shell:
     command: rustup default stable
     desc: Installing default stable toolchain

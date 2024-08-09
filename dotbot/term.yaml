@@ -31,6 +31,9 @@
     ~/.config/zed/settings.json:
       source: zed/settings.json
       force: true
+    ~/.config/zed/keymap.json:
+      source: zed/keymap.json
+      force: true
 
 - link:
     ~/.config/zellij/layouts/default.kdl:

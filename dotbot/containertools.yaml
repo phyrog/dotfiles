@@ -1,1 +1,19 @@
 - package: [docker, docker-buildx, k3d, k9s, kubernetes-cli, helm, kubectx]
+
+- create: ~/Projects
+
+- system:
+    os: darwin
+    then:
+      - link:
+          ~/Library/Application Support/k9s/plugins.yaml:
+            source: k9s/plugins.yaml
+            force: true
+
+- system:
+    os: linux
+    then:
+      - link:
+          ~/.config/k9s/plugins.yaml:
+            source: k9s/plugins.yaml
+            force: true

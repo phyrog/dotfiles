@@ -1,0 +1,66 @@
+plugins:
+  #--- Create debug container for selected pod in current namespace
+  # See https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#ephemeral-container
+  debug:
+    shortCut: Shift-D
+    description: Add debug container
+    scopes:
+      - containers
+    command: bash
+    background: false
+    confirm: true
+    args:
+      - -c
+      - "kubectl debug -it -n=$NAMESPACE $POD --target=$NAME --image=nicolaka/netshoot:v0.11 --share-processes -- bash"
+  refresh-app:
+    shortCut: Shift-R
+    confirm: false
+    description: Refresh application
+    scopes:
+      - applications
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl annotate --context $CONTEXT -n $NAMESPACE application $NAME argocd.argoproj.io/refresh=normal"
+  sync-app:
+    shortCut: Shift-S
+    confirm: false
+    description: Sync application
+    scopes:
+      - applications
+    command: bash
+    background: false
+    args:
+      - -c
+      - |
+        kubectl patch --context $CONTEXT -n $NAMESPACE application $NAME --type merge --patch-file /dev/stdin <<EOF
+        operation:
+          initiatedBy:
+            username: admin
+          sync:
+            syncStrategy:
+            hook: {}
+        EOF
+  watch-events:
+    shortCut: Shift-E
+    confirm: false
+    description: Get Events
+    scopes:
+      - all
+    command: sh
+    background: false
+    args:
+      - -c
+      - "watch -n 5 kubectl get events --context $CONTEXT --namespace $NAMESPACE --field-selector involvedObject.name=$NAME"
+  create-token:
+    shortCut: Shift-T
+    confirm: false
+    description: Create Token
+    scopes:
+      - serviceaccounts
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl --context $CONTEXT -n $NAMESPACE create token $NAME --duration=60m | pbcopy"

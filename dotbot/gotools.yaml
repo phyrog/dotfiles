@@ -4,3 +4,5 @@
     - tinygo-org/tools/tinygo
     - bufbuild/buf/buf
     - protobuf
+
+- create: ~/Projects
