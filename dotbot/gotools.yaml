@@ -1,8 +1,69 @@
 - package:
-    - go
-    - golangci/tap/golangci-lint
-    - tinygo-org/tools/tinygo
-    - bufbuild/buf/buf
-    - protobuf
+    - brew: go
+      apt: golang
+    - brew: golangci/tap/golangci-lint
+    - brew: tinygo-org/tools/tinygo
+    - brew: bufbuild/buf/buf
+    - brew: protobuf
+      apt: [protobuf-compiler, protobuf-compiler-grpc, protoc-gen-connect-go, protoc-gen-go, protoc-gen-go-grpc]
+
+- system:
+    os: linux
+    arch: amd64
+    then:
+    - install:
+        name: "golangci-lint"
+        url: https://github.com/golangci/golangci-lint
+        try_sudo: true
+        download:
+          url: '/releases/download/v{{ .Version }}/golangci-lint-{{ .Version }}-linux-{{ ARCH }}.tar.gz'
+          path: '/tmp'
+          extract:
+            "**/*":
+              path: "{{Local}}/share/golangci-lint"
+              replace: true
+              strip: 1
+        then:
+        - link:
+            "{{ Local }}/bin/golangci-lint":
+              source: "{{ Local }}/share/golangci-lint/golangci-lint"
+    - install:
+        name: "tinygo"
+        url: https://github.com/tinygo-org/tinygo
+        try_sudo: true
+        download:
+          url: '/releases/download/v{{ .Version }}/tinygo{{ .Version }}.linux-{{ ARCH }}.tar.gz'
+          path: '/tmp'
+          extract:
+            "**/*":
+              path: "{{Local}}/share/tinygo"
+              replace: true
+              strip: 1
+        then:
+        - link:
+            "{{ Local }}/bin/tinygo":
+              source: "{{ Local }}/share/tinygo/bin/tinygo"
+            "{{ Local }}/bin/wasm-opt":
+              source: "{{ Local }}/share/tinygo/bin/wasm-opt"
+    - install:
+        name: "buf"
+        url: https://github.com/bufbuild/buf
+        try_sudo: true
+        download:
+          url: '/releases/download/v{{ .Version }}/buf-Linux-x86_64.tar.gz'
+          path: '/tmp'
+          extract:
+            "**/*":
+              path: "{{Local}}/share/buf"
+              replace: true
+              strip: 1
+        then:
+        - link:
+            "{{ Local }}/bin/buf":
+              source: "{{ Local }}/share/buf/bin/buf"
+            "{{ Local }}/bin/protoc-gen-buf-breaking":
+              source: "{{ Local }}/share/buf/bin/protoc-gen-buf-breaking"
+            "{{ Local }}/bin/protoc-gen-buf-lint":
+              source: "{{ Local }}/share/buf/bin/protoc-gen-buf-lint"
 
 - create: ~/Projects

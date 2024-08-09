@@ -1,1 +1,3 @@
-- package: font-jetbrains-mono
+- package:
+    - brew: font-jetbrains-mono
+      apt: fonts-jetbrains-mono

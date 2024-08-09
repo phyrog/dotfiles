@@ -1,8 +1,9 @@
 - package:
     - alacritty
     - bat
-    - difftastic
-    - fd
+    - brew: difftastic
+    - brew: fd
+      apt: fd-find
     - fzf
     - gh
     - git
@@ -13,9 +14,73 @@
     - neovim
     - ripgrep
     - tig
-    - zed
-    - zellij
+    - brew: zed
+    - brew: zellij
     - zsh
+
+- system:
+    os: linux
+    arch: amd64
+    then:
+    - install:
+        name: "difftastic"
+        url: https://github.com/Wilfred/difftastic
+        try_sudo: true
+        download:
+          url: '/releases/download/{{ .Version }}/difft-x86_64-unknown-linux-gnu.tar.gz'
+          path: '/tmp'
+          extract:
+            "**/*":
+              path: "{{Local}}/share/difft"
+              replace: true
+        then:
+          - link:
+              "{{Local}}/bin/difft": "{{Local}}/share/difft/difft"
+    - install:
+        name: "zed"
+        url: https://github.com/zed-industries/zed
+        try_sudo: true
+        download:
+          url: '/releases/download/v{{ .Version }}/zed-linux-x86_64.tar.gz'
+          path: '/tmp'
+          extract:
+            "**/*":
+              path: "{{Local}}/share/zed"
+              replace: true
+              strip: 1
+        then:
+          - link:
+              "{{Local}}/bin/zed": "{{Local}}/share/zed/bin/zed"
+              "{{Local}}/lib/libasound.so.2": "{{Local}}/share/zed/lib/libasound.so.2"
+              "{{Local}}/lib/libbsd.so.0": "{{Local}}/share/zed/lib/libbsd.so.0"
+              "{{Local}}/lib/libcrypto.so.1.1": "{{Local}}/share/zed/lib/libcrypto.so.1.1"
+              "{{Local}}/lib/libssl.so.1.1": "{{Local}}/share/zed/lib/libssl.so.1.1"
+              "{{Local}}/lib/libXau.so.6": "{{Local}}/share/zed/lib/libXau.so.6"
+              "{{Local}}/lib/libxcb.so.1": "{{Local}}/share/zed/lib/libxcb.so.1"
+              "{{Local}}/lib/libxcb-xkb.so.1": "{{Local}}/share/zed/lib/libxcb-xkb.so.1"
+              "{{Local}}/lib/libXdmcp.so.6": "{{Local}}/share/zed/lib/libXdmcp.so.6"
+              "{{Local}}/lib/libxkbcommon.so.0": "{{Local}}/share/zed/lib/libxkbcommon.so.0"
+              "{{Local}}/lib/libxkbcommon-x11.so.0": "{{Local}}/share/zed/lib/libxkbcommon-x11.so.0"
+              "{{Local}}/lib/libz.so.1": "{{Local}}/share/zed/lib/libz.so.1"
+              "{{Local}}/lib/libzstd.so.1": "{{Local}}/share/zed/lib/libzstd.so.1"
+              "{{Local}}/libexec/zed-editor": "{{Local}}/share/zed/libexec/zed-editor"
+              "{{Local}}/share/applications/zed.desktop": "{{Local}}/share/zed/share/applications/zed.desktop"
+              "{{Local}}/share/icons/hicolor/1024x1024/apps/zed.png": "{{Local}}/share/zed/share/icons/hicolor/1024x1024/apps/zed.png"
+              "{{Local}}/share/icons/hicolor/512x512/apps/zed.png": "{{Local}}/share/zed/share/icons/hicolor/512x512/apps/zed.png"
+    - install:
+        name: "zellij"
+        url: https://github.com/zellij-org/zellij
+        try_sudo: true
+        download:
+          url: '/releases/download/v{{ .Version }}/zellij-x86_64-unknown-linux-musl.tar.gz'
+          path: '/tmp'
+          extract:
+            "**/*":
+              path: "{{Local}}/share/zellij"
+              replace: true
+        then:
+          - link:
+              "{{Local}}/bin/zellij": "{{Local}}/share/zellij/zellij"
 
 - link:
     ~/.alacritty.toml:

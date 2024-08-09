@@ -1,1 +1,2 @@
-- package: logseq
+- package:
+    - brew: logseq
