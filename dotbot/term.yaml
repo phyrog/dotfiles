@@ -47,3 +47,6 @@
     ~/.zsh_plugins.txt:
       source: zsh/zsh_plugins.txt
       force: true
+
+- git:
+    ~/.antidote: https://github.com/mattmc3/antidote.git
