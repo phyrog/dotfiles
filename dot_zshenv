@@ -17,4 +17,8 @@ export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 
 export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin:$WASMTIME_HOME/bin:$HOME/.bun/bin"
 
-[[ -f "$HOME/.cargo/env" ]] && 
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
