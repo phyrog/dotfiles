@@ -24,3 +24,16 @@ function VCS_INFO_get_data_jj() {
 
     VCS_INFO_formats "$jjactionstring" "$jjchangeid" "$jjbase" "" "" "$jjchangeid" "$jjmisc"
 }
+
+alias jjbc="jj bookmark create"
+alias jjd="jj describe"
+alias jjdm="jj describe -m"
+alias jje="jj edit"
+alias jjf="jj git fetch"
+alias jjn="jj new"
+alias jjp="jj git push -c"
+alias jjrb="jj rebase -d"
+alias jjs="jj show"
+alias jjst="jj status"
+alias jjsq="jj squash"
+alias jju="jj undo"
