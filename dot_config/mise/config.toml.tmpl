@@ -3,7 +3,7 @@ bat = "latest"
 go = "latest"
 neovim = "latest"
 node = "latest"
-"openbao" = "latest"
+openbao = "latest"
 opentofu = "latest"
 packer = "latest"
 pkl = "latest"
@@ -27,13 +27,19 @@ fzf = "latest"
 fd = "latest"
 difftastic = "latest"
 elixir = "latest"
-"gocryptfs" = "latest"
+{{- if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") }}
+gocryptfs = "latest"
+{{- end }}
 buf = "latest"
 uv = "latest"
 chezmoi = "latest"
 golangci-lint = "latest"
 gitu = "latest"
-"aqua:martinvonz/jj" = "latest"
+{{- if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "amd64") }}
+"ubi:martinvonz/jj" = "latest"
+{{- else }}
+jj = "latest"
+{{- end }}
 "go:github.com/go-delve/delve/cmd/dlv" = "latest"
 "go:github.com/google/capslock/cmd/capslock" = "latest"
 
