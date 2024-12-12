@@ -35,3 +35,7 @@ golangci-lint = "latest"
 gitu = "latest"
 "aqua:martinvonz/jj" = "latest"
 "go:github.com/go-delve/delve/cmd/dlv" = "latest"
+"go:github.com/google/capslock/cmd/capslock" = "latest"
+
+[settings]
+experimental = true
