@@ -1,0 +1,7 @@
+README.md
+zsh_plugins
+{{ if eq .chezmoi.os "darwin" }}
+.cache/antidote
+{{ else if eq .chezmoi.os "linux" }}
+Library/Caches/antidote
+{{ end }}
