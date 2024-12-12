@@ -9,9 +9,6 @@ ohmyzsh/ohmyzsh path:lib/key-bindings.zsh
 ohmyzsh/ohmyzsh path:lib/spectrum.zsh
 ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
 
-# theme
-https://gist.github.com/phyrog/947024b2230c6db822a8d250b4f1cffc path:nicoulaj.zsh-theme
-
 # general purpose plugins
 ohmyzsh/ohmyzsh path:plugins/git/git.plugin.zsh
 ohmyzsh/ohmyzsh path:plugins/git-lfs/git-lfs.plugin.zsh
@@ -32,3 +29,4 @@ ohmyzsh/ohmyzsh path:plugins/gcloud/gcloud.plugin.zsh
 
 # custom
 phyrog/dotfiles path:zsh_plugins
+phyrog/dotfiles path:zsh_plugins/nicoulaj.zsh-theme
