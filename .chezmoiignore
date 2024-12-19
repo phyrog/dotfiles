@@ -1,5 +1,7 @@
 README.md
 zsh_plugins
+mise.toml
+vivid
 {{- if ne .chezmoi.os "linux" }}
 .config/xkb
 {{- end }}

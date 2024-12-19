@@ -9,10 +9,12 @@ export WHALEBREW_INSTALL_PATH="$HOME/.local/bin"
 
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 
+export HOMEBREW_PREFIX="/usr/local"
 
 export ZSH_CACHE_DIR=$HOME/Library/Caches/zsh
-export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/opt/llvm/bin"
+export PATH="$PATH:$HOMEBREW_PREFIX/opt/homebrew/bin:$HOMEBREW_PREFIX/opt/homebrew/opt/llvm/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
+export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
 
 export PATH="$PATH:$HOME/.krew/bin:$GOPATH/bin:$WASMTIME_HOME/bin:$HOME/.bun/bin"
