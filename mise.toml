@@ -5,7 +5,7 @@ vivid = "latest"
 description = "generate the zsh colors config"
 run = '''
 cat <<EOF > zsh_plugins/vivid.plugin.zsh
-export LS_COLORS="$(vivid generate vivid/flexoki-dark.yml)"
+export LS_COLORS='$(vivid generate vivid/flexoki-dark.yml)'
 zstyle ':completion:*' list-colors \${(s.:.)LS_COLORS}
 EOF
 '''
