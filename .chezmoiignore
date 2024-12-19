@@ -1,2 +1,5 @@
 README.md
 zsh_plugins
+{{- if ne .chezmoi.os "linux" }}
+.config/xkb
+{{- end }}
