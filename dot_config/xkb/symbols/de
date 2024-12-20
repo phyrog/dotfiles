@@ -6,7 +6,7 @@ xkb_symbols "logimac" {
 
     include "de(mac)"
 
-    // Swap ^≤ and < keys
+    // Swap ^ and < keys
     key <LSGT> { [ dead_circumflex, degree, doublelowquotemark, leftdoublequotemark ] };
     key <TLDE> { [ less, greater, lessthanequal, greaterthanequal ] };
 
