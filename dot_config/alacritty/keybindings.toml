@@ -1,0 +1,71 @@
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = " "
+key = "Space"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Left"
+mode = "AppCursor"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "Right"
+mode = "AppCursor"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "{"
+key = 28
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "}"
+key = 25
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "@"
+key = 37
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = '\'
+key = 26
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+chars = "|"
+key = 26
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "["
+key = 23
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "]"
+key = 22
+mods = "Alt"
