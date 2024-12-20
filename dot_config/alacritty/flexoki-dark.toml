@@ -1,5 +1,5 @@
 [colors.bright]
-black = '#575653'
+black = '#100F0F'
 red = '#D14D41'
 green = '#879A39'
 yellow = '#D0A215'
@@ -13,7 +13,7 @@ text = 'CellBackground'
 cursor = 'CellForeground'
 
 [colors.dim]
-black = '#575653'
+black = '#100F0F'
 red = '#AF3029'
 green = '#66800B'
 yellow = '#AD8301'
@@ -23,11 +23,11 @@ cyan = '#24837B'
 white = '#FFFCF0'
 
 [colors.normal]
-black = '#575653'
+black = '#100F0F'
 red = '#AF3029'
 green = '#66800B'
 yellow = '#AD8301'
-blue = '#205EA6'    # rgb(32, 94, 166)
+blue = '#205EA6'
 magenta = '#A02F6F'
 cyan = '#24837B'
 white = '#FFFCF0'

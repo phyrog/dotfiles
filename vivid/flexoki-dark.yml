@@ -94,7 +94,7 @@ core:
     font-style: italic
 
   other_writable:
-    foreground: alt_green
+    foreground: alt_red
     font-style: bold
 
   sticky:
@@ -102,7 +102,7 @@ core:
     background: blue
 
   executable_file:
-    foreground: alt_green
+    foreground: green
     font-style: bold
 
 text:
@@ -112,6 +112,7 @@ text:
 
   todo:
     foreground: alt_green
+    font-style: italic
 
   licenses:
     foreground: tx2
@@ -128,10 +129,10 @@ markup:
 
 programming:
   source:
-    foreground: green
+    foreground: magenta
 
   tooling:
-    foreground: alt_green
+    foreground: alt_magenta
     font-style: italic
 
     continuous-integration:
