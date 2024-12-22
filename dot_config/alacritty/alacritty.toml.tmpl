@@ -1,4 +1,6 @@
+{{- if ne .chezmoi.osRelease.id "ubuntu" -}}
 [general]
+{{- end }}
 import = [
 "keybindings.toml",
 "flexoki-dark.toml",
