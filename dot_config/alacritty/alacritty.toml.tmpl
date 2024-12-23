@@ -1,4 +1,4 @@
-{{- if ne .chezmoi.osRelease.id "ubuntu" -}}
+{{- if ne (index .chezmoi.osRelease "id") "ubuntu" -}}
 [general]
 {{- end }}
 import = [
