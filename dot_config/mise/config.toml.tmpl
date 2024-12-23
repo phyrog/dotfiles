@@ -75,5 +75,5 @@ experimental = true
 description = "Create a new .gitconfig file the in current directory and include it for all git repos below this path"
 run = '''
 touch .gitconfig
-echo "\n\n[includeIf \"gitdir:$(pwd)/\"]\npath = $(pwd)/.gitconfig" >> ~/.gitconfig
+git config set --global includeif.gitdir:$(pwd)/.path $(pwd)/.gitconfig
 '''
