@@ -1,44 +1,72 @@
 [tools]
 bat = "latest"
-go = "latest"
+bitwarden = "latest"
+chezmoi = "latest"
+difftastic = "latest"
+fd = "latest"
+fzf = "latest"
+github-cli = "latest"
+gitu = "latest"
 neovim = "latest"
-node = "latest"
-openbao = "latest"
-opentofu = "latest"
-packer = "latest"
-pkl = "latest"
+jj = "latest"
+jq = "latest"
 pre-commit = "latest"
+ripgrep = "latest"
+typst = "latest"
+yt-dlp = "latest"
+zellij = "latest"
+
+{{- if has "gocryptfs" .groups }}
+gocryptfs = "latest"
+{{- end }}
+
+{{- if has "go" .groups }}
+buf = "latest"
+capslock = "latest"
+delve = "latest"
+go = "latest"
+golangci-lint = "latest"
 protoc = "latest"
 protoc-gen-connect-go = "latest"
 protoc-gen-go = "latest"
 protoc-gen-go-grpc = "latest"
-pulumi = "latest"
-ripgrep = "latest"
-rust = "latest"
-typst = "latest"
-yt-dlp = "latest"
-zellij = "latest"
-zig = "latest"
-bitwarden = "latest"
-kubectl = "latest"
-jq = "latest"
-github-cli = "latest"
-fzf = "latest"
-fd = "latest"
-difftastic = "latest"
-elixir = "latest"
-{{- if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") }}
-gocryptfs = "latest"
 {{- end }}
-buf = "latest"
+
+{{- if has "kubernetes" .groups }}
+kubectl = "latest"
+{{- end }}
+
+{{- if has "cloud" .groups }}
+opentofu = "latest"
+packer = "latest"
+pulumi = "latest"
+{{- end }}
+
+{{- if has "rust" .groups }}
+rust = "latest"
+{{- end }}
+
+{{- if has "zig" .groups }}
+zig = "latest"
+{{- end }}
+
+{{- if has "elixir" .groups }}
+erlang = "latest"
+elixir = "latest"
+{{- end }}
+
+{{- if has "node" .groups }}
+node = "latest"
+{{- end }}
+
+{{- if has "python" .groups }}
 uv = "latest"
-chezmoi = "latest"
-golangci-lint = "latest"
-gitu = "latest"
-gh = "latest"
-jj = "latest"
-"go:github.com/go-delve/delve/cmd/dlv" = "latest"
-"go:github.com/google/capslock/cmd/capslock" = "latest"
+{{- end }}
+
+[alias]
+capslock = "go:github.com/google/capslock/cmd/capslock"
+delve = "go:github.com/go-delve/delve/cmd/dlv"
+protoc-gen-connect-go = "go:connectrpc.com/connect/cmd/protoc-gen-connect-go"
 
 [settings]
 experimental = true
