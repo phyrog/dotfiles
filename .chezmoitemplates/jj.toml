@@ -6,4 +6,11 @@ email = "{{ .email }}"
 default-command = "log"
 
 [colors]
-rest = "#575653" # flexoki tx-3
+# flexoki tx-3
+rest = "#575653"
+separator = "#575653"
+elided = "#575653"
+"config_list overridden" = "#575653"
+"config_list overridden name" = "#575653"
+"config_list overridden value" = "#575653"
+"node elided" = "#575653"
