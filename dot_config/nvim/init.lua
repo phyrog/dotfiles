@@ -1,3 +1,7 @@
+-- lazy.nvim
+
+require("config.lazy")
+
 -- General
 
 local opt = vim.opt
@@ -74,3 +78,6 @@ if vim.g.vscode ~= nil then
   map('o', 'gc',  '<Plug>VSCodeCommentary')
   map('n', 'gcc', '<Plug>VSCodeCommentaryLine')
 end
+
+-- Theme
+vim.cmd('colorscheme flexoki-dark')
