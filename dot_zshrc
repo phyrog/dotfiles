@@ -10,8 +10,9 @@ fpath+=($ZSH_CACHE_DIR/completions)
 autoload -Uz compinit && compinit
 
 # FZF options
-export FZF_DEFAULT_COMMAND="fd"
+export FZF_DEFAULT_COMMAND="fd -t f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}'"
 
 ###############################################################################################################
 # Antidote Config #############################################################################################
