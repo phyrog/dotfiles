@@ -1,0 +1,7 @@
+{{- $name := promptStringOnce . "name" "Full name" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+
+[data]
+  name = {{ $name | quote }}
+  email = {{ $email | quote }}
+  groups = ["go", "rust", "elixir", "node", "python", "zig"]
