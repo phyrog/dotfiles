@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+cat <<EOF > $HOME/.gitconfig
+[user]
+	name = {{ .name }}
+	email = {{ .email }}
+[init]
+	defaultBranch = main
+EOF
