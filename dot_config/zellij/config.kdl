@@ -1,3 +1,5 @@
+theme "flexoki-dark"
+
 keybinds clear-defaults=true {
     locked {
         bind "ctrl g" { SwitchToMode "normal"; }
@@ -408,3 +410,4 @@ default_mode "locked"
 // Default: true (if the host terminal supports it)
 // 
 // support_kitty_keyboard_protocol false
+
