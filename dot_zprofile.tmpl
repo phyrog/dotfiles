@@ -9,7 +9,7 @@ export WHALEBREW_INSTALL_PATH="$HOME/.local/bin"
 
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 
-export HOMEBREW_PREFIX="/usr/local"
+export HOMEBREW_PREFIX="{{ default "/usr/local" .homebrew_prefix }}"
 
 export ZSH_CACHE_DIR=$HOME/Library/Caches/zsh
 export PATH="$PATH:$HOMEBREW_PREFIX/opt/homebrew/bin:$HOMEBREW_PREFIX/opt/homebrew/opt/llvm/bin"
