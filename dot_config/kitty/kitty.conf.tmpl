@@ -1,3 +1,7 @@
+{{- if eq .chezmoi.os "linux" }}
+hide_window_decorations yes
+{{- end }}
+
 tab_bar_edge top
 tab_bar_min_tabs 1
 tab_bar_style powerline
