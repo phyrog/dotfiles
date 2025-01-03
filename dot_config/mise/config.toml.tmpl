@@ -8,6 +8,7 @@ fzf = "latest"
 git-absorb = "latest"
 github-cli = "latest"
 gitu = "latest"
+"aqua:tomnomnom/gron" = "latest"
 hexyl = "latest"
 neovim = "latest"
 jj = "latest"
@@ -16,6 +17,7 @@ pre-commit = "latest"
 ripgrep = "latest"
 typst = "latest"
 yt-dlp = "latest"
+yq = "latest"
 zellij = "latest"
 
 {{- if has "gocryptfs" .groups }}
@@ -35,10 +37,24 @@ protoc-gen-go-grpc = "latest"
 {{- end }}
 
 {{- if has "kubernetes" .groups }}
+helm = "latest"
+k3d = "latest"
+k9s = "latest"
+kapp = "latest"
+kind = "latest"
+krew = "latest"
 kubectl = "latest"
+kubectx = "latest"
+lima = "latest"
+minikube = "latest"
+tilt = "latest"
+ytt = "latest"
 {{- end }}
 
 {{- if has "cloud" .groups }}
+aws-cli = "latest"
+aws-nuke = "latest"
+azure = "latest"
 opentofu = "latest"
 packer = "latest"
 pulumi = "latest"
