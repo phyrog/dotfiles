@@ -4,6 +4,7 @@ email = "{{ .email }}"
 
 [ui]
 default-command = "log"
+pager="less -FRX"
 
 [colors]
 # flexoki tx-3
