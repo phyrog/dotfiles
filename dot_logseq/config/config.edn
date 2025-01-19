@@ -9,4 +9,4 @@
 ;;   {:shortcuts {:ui/toggle-theme "t z"
 ;;                :ui/toggle-brackets "t b"}}
 
-{:custom-css-url "@import url('assets://{{ .chezmoi.homeDir }}/.logseq/config/custom.css');"} 
+{:custom-css-url "https://cdn.jsdelivr.net/gh/phyrog/dotfiles@main/dot_logseq/config/custom.css"} 

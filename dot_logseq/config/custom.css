@@ -46,7 +46,8 @@
     --ct-page-title-color: var(--tx);
     --ct-page-title-font-weight: 500;
 
-    --ls-block-bullet-active-color: var(--cy);
+    --ls-page-blockquote-bg-color: var(--bg-2);
+    --ls-page-blockquote-color: var(--tx-2);
 }
 
 .cp__header::after {
