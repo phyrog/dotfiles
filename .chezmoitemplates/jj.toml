@@ -7,6 +7,14 @@ default-command = "log"
 pager="less -FRX"
 show-cryptographic-signatures = true
 
+[signing]
+backend = "ssh"
+
+[git]
+push-new-bookmarks = true
+sign-on-push = true
+subprocess = true
+
 [colors]
 # flexoki tx-3
 rest = "#575653"
