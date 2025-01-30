@@ -15,6 +15,9 @@ push-new-bookmarks = true
 sign-on-push = true
 subprocess = true
 
+[templates]
+log = "builtin_log_compact ++ diff.summary()"
+
 [colors]
 # flexoki tx-3
 rest = "#575653"
