@@ -12,7 +12,6 @@ backend = "ssh"
 
 [git]
 push-new-bookmarks = true
-sign-on-push = true
 subprocess = true
 
 [templates]
