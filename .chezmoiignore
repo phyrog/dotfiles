@@ -4,8 +4,5 @@ mise.toml
 vivid
 {{- if ne .chezmoi.os "linux" }}
 .config/xkb
-.config/jj
-{{- else if ne .chezmoi.os "darwin" }}
-Library
 {{- end }}
 
