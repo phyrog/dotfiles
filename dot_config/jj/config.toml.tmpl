@@ -1,1 +1,44 @@
-{{- template "jj.toml" . -}}
+[user]
+name = "{{ .name }}"
+email = "{{ .email }}"
+
+[ui]
+default-command = "log"
+pager="less -FRX"
+show-cryptographic-signatures = true
+should-sign-off = false
+
+[signing]
+backend = "ssh"
+
+[git]
+push-new-bookmarks = true
+subprocess = true
+
+[colors]
+# flexoki tx-3
+rest = "#575653"
+separator = "#575653"
+elided = "#575653"
+"config_list overridden" = "#575653"
+"config_list overridden name" = "#575653"
+"config_list overridden value" = "#575653"
+"node elided" = "#575653"
+
+[templates]
+log = "builtin_log_compact ++ diff.summary()"
+draft_commit_description = '''
+concat(
+  description,
+  "\n",
+  if(
+    config("ui.should-sign-off").as_boolean() && !description.contains("Signed-off-by: " ++ author.name()),
+    "Signed-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">",
+  ),
+  "\n",
+  surround(
+    "JJ: This commit contains the following changes:\n", "",
+    indent("JJ:     ", diff.summary()),
+  ),
+)
+'''
